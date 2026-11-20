@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leonida Platinum Atlas — GTA VI Trophy Guide &amp; Tracker</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header id="topbar">
+  <div class="brand">
+    <div class="brand-mark" aria-hidden="true"></div>
+    <div>
+      <h1>LEONIDA <span>PLATINUM ATLAS</span></h1>
+      <p class="tagline">GTA VI trophy guide &amp; tracker — all 55 PlayStation 5 trophies, with a roadmap, missable alerts and cited guides.</p>
+    </div>
+  </div>
+  <div class="head-tools">
+    <div class="progress-block">
+      <div class="progress-line"><strong id="progress-count">0/55</strong> earned · <strong id="progress-pct">0%</strong></div>
+      <div class="progress-track"><div id="progress-bar"></div></div>
+    </div>
+    <button id="shield-toggle" type="button" class="tool-btn" title="Hide or reveal hidden trophies">Spoiler shield: ON</button>
+    <button id="export-btn" type="button" class="tool-btn">Export progress</button>
+    <label class="tool-btn file-btn">Import progress<input id="import-file" type="file" accept="application/json" hidden></label>
+  </div>
+</header>
+
+<nav id="view-tabs" aria-label="Views">
+  <button type="button" data-view="tracker" class="tab active">Tracker</button>
+  <button type="button" data-view="roadmap" class="tab">Roadmap to Platinum</button>
+  <button type="button" data-view="missables" class="tab">Missables <span class="tab-badge">7</span></button>
+</nav>
+
+<main>
+  <section id="view-tracker">
+    <div id="filter-bar">
+      <input id="search" type="search" placeholder="Search trophies…" aria-label="Search trophies">
+      <div class="chip-row" id="state-chips">
+        <button type="button" class="chip active" data-state="all">All</button>
+        <button type="button" class="chip" data-state="earned">Earned</button>
+        <button type="button" class="chip" data-state="missing">Missing</button>
+      </div>
+      <div class="chip-row" id="kind-chips">
+        <button type="button" class="chip active" data-kind="all">All kinds</button>
+        <button type="button" class="chip" data-kind="story">Story</button>
+        <button type="button" class="chip" data-kind="missable">Missable</button>
+        <button type="button" class="chip" data-kind="collectibles">Collectibles</button>
+        <button type="button" class="chip" data-kind="activities">Activities</button>
+        <button type="button" class="chip" data-kind="online">Online</button>
+      </div>
+      <label class="grade-pick">Grade
+        <select id="grade-filter">
+          <option value="all">All grades</option>
+          <option value="platinum">Platinum</option>
+          <option value="gold">Gold</option>
+          <option value="silver">Silver</option>
+          <option value="bronze">Bronze</option>
+        </select>
+      </label>
+      <span id="result-count" class="result-count"></span>
+    </div>
+    <div id="tracker-layout">
+      <div id="card-grid" aria-live="polite"></div>
+      <aside id="detail-panel" aria-label="Trophy detail"></aside>
+    </div>
+  </section>
+
+  <section id="view-roadmap" hidden>
+    <p class="view-intro">Five stages, built from the official trophy descriptions: clear the story, close every stranger strand <em>before</em> the finale, then sweep collectibles and activities, and finish with the 100% cleanup. This list contains no online trophies, so no stage needs another player.</p>
+    <div id="roadmap-list"></div>
+  </section>
+
+  <section id="view-missables" hidden>
+    <p class="view-intro warn-intro">Seven trophies can be lost in a single playthrough. Each card below names its point of no return — finish these before the story's final mission and the platinum stays a one-run job.</p>
+    <div id="missable-list"></div>
+  </section>
+</main>
+
+<footer>
+  <p>Unofficial fan-made guide. Trophy names and descriptions are shown as PlayStation publishes them; every guide here is written for this entry and cites its sources beside it. Progress is stored only in your browser (localStorage).</p>
+</footer>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>
